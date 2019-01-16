@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  app:
+    image: node:9.11.1-alpine
+    volumes:
+      - .:/data
+    ports:
+      - "3000:3000"
+    working_dir: /data
+    command: ["npm", "start"]
+
+networks:
+  default:
+    external:
+      name: local
